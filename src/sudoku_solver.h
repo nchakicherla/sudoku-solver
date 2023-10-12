@@ -1,5 +1,5 @@
-#ifndef TEST_SUDOKU_SOLVER_H
-#define TEST_SUDOKU_SOLVER_H
+#ifndef SUDOKU_SOLVER_H
+#define SUDOKU_SOLVER_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -52,4 +52,4 @@ TEST_printAllPossibilities(struct Board* board);
 void
 printSolution(struct Board* board);
 
-#endif // TEST_SUDOKU_SOLVER_H
+#endif // SUDOKU_SOLVER_H
