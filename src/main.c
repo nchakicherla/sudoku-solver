@@ -35,9 +35,9 @@ main(void) {
 
     while(!checkForWin(sudoku_board)) {
         for(size_t i = 0; i < BOARD_AREA; i++) {
-            updatePossibilities(sudoku_board, i);
+            updateSquarePossibilities(sudoku_board, i);
         }
-        validatePossibilities(sudoku_board);
+        validateAllPossibilities(sudoku_board);
     }
 
     printSolution(sudoku_board);

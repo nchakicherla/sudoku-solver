@@ -7,12 +7,6 @@
 #include <time.h>
 #include <inttypes.h>
 #include <string.h>
-#include <ctype.h>
-#include <signal.h>
-#include <unistd.h>
-
-#include <panel.h>
-#include <ncurses.h>
 
 #include "sudoku_solver.h"
 

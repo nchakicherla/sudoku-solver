@@ -4,9 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include <limits.h>
 #include <stdbool.h>
-//#include <math.h>
 
 #include "memory.h"
 
@@ -17,24 +15,6 @@
 struct Board;
 struct Square;
 struct I32Node;
-
-/*
-struct Board {
-	struct Square* squares;
-	bool solved;
-	size_t num_cycles;
-};
-
-struct Square {
-	struct I32Node* possibilities;
-	int32_t value;
-};
-
-struct I32Node {
-	struct I32Node* next;
-	int32_t value;
-};
-*/
 
 struct Board*
 newBoard(const int32_t* board_start);
@@ -55,10 +35,10 @@ struct I32Node*
 newI32Node(int32_t value);
 
 void
-updatePossibilities(struct Board* board, size_t square_idx);
+updateSquarePossibilities(struct Board* board, size_t square_idx);
 
 void
-validatePossibilities(struct Board* board);
+validateAllPossibilities(struct Board* board);
 
 bool
 checkForWin(struct Board* board);

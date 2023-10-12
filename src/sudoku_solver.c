@@ -122,14 +122,14 @@ newI32Node(int32_t value) {
 }
 
 void
-updatePossibilities(struct Board* board, size_t square_idx) {
+updateSquarePossibilities(struct Board* board, size_t square_idx) {
 	if(board->squares[square_idx].soln) return;
 	bool possibilities[BOARD_LEN + 1];
 	for(size_t i = 0; i < BOARD_LEN + 1; i++) {
 		possibilities[i] = true;
 	}
-	size_t x = square_idx % BOARD_LEN; // 4
-	size_t y = square_idx / BOARD_LEN; // 4
+	size_t x = square_idx % BOARD_LEN;
+	size_t y = square_idx / BOARD_LEN;
 	for(size_t i = 0; i < BOARD_LEN; i++) {
 		if(board->squares[i + (y * BOARD_LEN)].soln > 0) {
 			possibilities[board->squares[i + (y * BOARD_LEN)].soln] = false;
@@ -168,7 +168,7 @@ updatePossibilities(struct Board* board, size_t square_idx) {
 }
 
 void
-validatePossibilities(struct Board* board) {
+validateAllPossibilities(struct Board* board) {
 	for(size_t i = 0; i < BOARD_AREA; i++) {
 		struct I32Node* curr_node = board->squares[i].possibilities;
 		int32_t num_possibilities = 0;
